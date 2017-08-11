@@ -1,0 +1,27 @@
+extends layout
+
+block content 
+  h1= title
+  
+  br
+
+  - for doctor in doctors
+    a(href="/doctor/" + doctor.id method="get")  
+      li= doctor.name
+  br
+  a(href="/")
+    p Click to go home
+
+  h1 Add doctor  
+  form(action="/doctor/new" method="post")
+    div.input
+        span.label
+        input(type="text", name="name" placeholder="Name")
+        span.lable
+        input(type="text", name="age" placeholder="Age")
+        span.label
+        input(type="text", name="gender" placeholder="Gender")
+        span.label
+        input(type="text", name="hospital" placeholder="hospital")
+    div.actions
+        input(type="submit", value="add")

@@ -1,0 +1,24 @@
+extends layout
+
+
+block content 
+  - for doctor in doctors
+      h1= doctor.name
+  
+    each doctor in doctors
+      table
+          tr: td id 
+            td= doctor.id
+          tr: td name
+            td= doctor.name
+          tr: td hospital
+            td= doctor.hospital
+                  
+
+  br
+  a(href="/")
+    p Click to go home
+
+  br
+  a(href= "/" + docPat + "/delete/" + id)
+    P Click to Delete Record
